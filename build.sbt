@@ -37,24 +37,28 @@ publishArtifact in Test := false
 libraryDependencies += "org.apache.logging.log4j" % "log4j" % "2.8"
 
 // scalatest
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.1" % "test"
+libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.4" % "test"
+
+libraryDependencies += "MrPowers" % "spark-fast-tests" % "2.2.0_0.5.0" % "test"
+
+spDependencies += "MrPowers/spark-fast-tests:0.4.0"
 
 pomExtra := (
   <url>https://github.com/diana-hep/spark-root</url>
-  <scm>
-    <url>git@github.com:diana-hep/spark-root.git</url>
-    <connection>scm:git:git@github.com:diana-hep/spark-root.git</connection>
-  </scm>
-  <developers>
-    <developer>
+    <scm>
+      <url>git@github.com:diana-hep/spark-root.git</url>
+      <connection>scm:git:git@github.com:diana-hep/spark-root.git</connection>
+    </scm>
+    <developers>
+      <developer>
         <name>Jim Pivarski</name>
         <email>jpivarski@gmail.com</email>
         <organization>DIANA-HEP</organization>
         <organizationUrl>http://diana-hep.org</organizationUrl>
-    </developer>
-    <developer>
-      <id>vkhristenko</id>
-      <name>Viktor Khristenko</name>
-      <url>https://github.com/diana-hep/spark-root</url>
-    </developer>
-  </developers>)
+      </developer>
+      <developer>
+        <id>vkhristenko</id>
+        <name>Viktor Khristenko</name>
+        <url>https://github.com/diana-hep/spark-root</url>
+      </developer>
+    </developers>)

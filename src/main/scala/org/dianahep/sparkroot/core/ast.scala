@@ -16,6 +16,7 @@ package object core
   /**
    * @return prints the Abstractly Typed Tree
    */
+  /**
   def printATT(att: core.SRType, level: Int = 0, sep: String = "  "): Unit = att match {
     case core.SRNull => println(sep*level+"Null")
     case core.SRUnknown(name) => println(sep*level + s"$name: Unknown")
@@ -57,13 +58,14 @@ package object core
     }
     case _ => println("")
   }
+  **/
 
   def buildSparkSchema(att: core.SRType) = att.toSparkType.asInstanceOf[StructType]
   def readSparkRow(att: core.SRType): Row = att.read.asInstanceOf[Row]
   def containsNext(att: core.SRType) = att.hasNext
 
   /**
-   * Build ATT - Abractly Typed Tree
+   * Build ATT - Abstractly Typed Tree
    *
    * @return ATT
    */

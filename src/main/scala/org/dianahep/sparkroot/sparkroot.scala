@@ -89,7 +89,8 @@ package object sparkroot {
     }
     
     // create the abstract tree
-    private val att: core.SRType = 
+
+    private val att: core.SRType =
     {
       //logger.info("Building the Abstract Schema Tree...")
       logger.info(s"Building the Abstract Schema Tree... for treeName=${optTreeName}")
@@ -99,6 +100,7 @@ package object sparkroot {
         case None => throw NoTTreeException(optTreeName)
       }
     }
+
 
     // define the schema from the AST
     def schema: StructType = {
@@ -110,12 +112,13 @@ package object sparkroot {
       s
     }
 
+
     // builds a scan
     def buildScan(requiredColumns: Array[String], filters: Array[Filter]): RDD[Row] = {
       logger.info("Building Scan")
       println(requiredColumns.mkString(" "))
       println(filters)
-      val localOptTreeName = optTreeName  
+      val localOptTreeName = optTreeName
 
       // parallelize over all the files
       val r = sqlContext.sparkContext.parallelize(inputPathFiles, inputPathFiles.size).
